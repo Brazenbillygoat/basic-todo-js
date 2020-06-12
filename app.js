@@ -11,17 +11,21 @@ ourForm.addEventListener("submit", (e) => {
     createItem(ourField.value)
 })
 
-
+//inserting my html items with javascript makes this block reusable and
+//looks more clean overall in my opinion
 function createItem(x) {
     if (ourField.value.trim() !== "") {
         let ourHTML = `<li> ${x} <button onclick= "deleteItem(this)">Delete</button></li>`
         ourList.insertAdjacentHTML("beforeend", ourHTML)
     }
-
+    //sets the text box back to blank so user doesn't have to clear it
+    //and puts the cursor back in the text box so user doesn't have to 
+    //select the text box after each entry when adding multiple todos
     ourField.value = ""
     ourField.focus()
 }
 
+//deletes the delete button itself and it's parent <li> element
 function deleteItem(elementToDelete) {
     elementToDelete.parentElement.remove()
 }
