@@ -3,7 +3,8 @@ let ourForm = document.getElementById("ourForm")
 let ourField = document.getElementById("ourField")
 let ourList = document.getElementById("ourList")
 
-//giving functionality to the button when it is clickedbut using
+//preparing javascript to recieve the data from ourForm and
+//giving functionality to the button when it is clicked but using
 //'submit' because if I use 'click' as the first argument then
 //the form will be submitted just by clicking in the text box
 ourForm.addEventListener("submit", (e) => {
@@ -17,6 +18,9 @@ function createItem(x) {
     if (ourField.value.trim() !== "") {
         let ourHTML = `<li> ${x} <button onclick= "deleteItem(this)">Delete</button></li>`
         ourList.insertAdjacentHTML("beforeend", ourHTML)
+    } else {
+    return alert("Please enter an item")
+
     }
     //sets the text box back to blank so user doesn't have to clear it
     //and puts the cursor back in the text box so user doesn't have to 
